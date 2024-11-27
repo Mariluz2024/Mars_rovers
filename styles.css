@@ -1,0 +1,48 @@
+#splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  #splash-title {
+    font-size: 52px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+  }
+  
+  #start-btn {
+    padding: 10px 20px;
+    font-size: 36px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: aliceblue;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 400px;
+  }
+  
+  #start-btn:hover {
+    background-color: bisque;
+  }
+  
+  .bungee-spice-regular {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  #game-points {
+      font-size: 39px;
+      margin-left: 700px;
+  }
+  
+  #rover {
+      position: absolute;
+      left: 150px;
+      top: 250px;
+  }

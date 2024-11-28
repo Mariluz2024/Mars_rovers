@@ -7,7 +7,7 @@
     text-align: center;
   }
   
-  #splash-title {
+  #splash-title, game-over-title {
     font-size: 52px;
     font-weight: bold;
     color: white;
@@ -36,9 +36,15 @@
     font-style: normal;
   }
   
+  #game-time {
+      font-size: 39px;
+      margin-left: 500px;
+  }
+  
   #game-points {
       font-size: 39px;
-      margin-left: 700px;
+      margin-top: 0px;
+      margin-left: 500px;
   }
   
   #rover {

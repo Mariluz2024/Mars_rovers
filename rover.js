@@ -1,4 +1,10 @@
+/**
+ * Representa el objeto Rover.
+ */
 class Rover {
+  /**
+   * Constructor de la clase Rover.
+   */
   constructor() {
     this.node = document.createElement("img");
     this.node.src = "images/rover.png";
@@ -18,8 +24,7 @@ class Rover {
     this.node.style.top = `${this.y}px`;
     this.node.style.left = `${this.x}px`;
 
-    this.gravitySpeed = 2;
-    this.jumpSpeed = 170;
+    this.speed = 6;
 
     this.successSound = new Audio('sounds/success.mp3');
   }
@@ -28,7 +33,12 @@ class Rover {
    * Hace mover el rover hacia la derecha.
    */
   moveRight() {
-    this.x += 6;
+    this.x += this.speed;
+
+    if (this.x >= window.innerWidth - this.w - 100) {
+      this.x = window.innerWidth - this.w - 100;
+    }
+
     this.node.style.left = `${this.x}px`;
   }
 
@@ -36,7 +46,22 @@ class Rover {
    * Hace mover el rover hacia la izquierda.
    */
   moveLeft() {
-    this.x -= 6;
+    this.x -= this.speed;
     this.node.style.left = `${this.x}px`;
   }
+
+  /**
+   * Hace que el rover regrese a su posición inicial.
+   */
+  backToInitialPosition() {
+    this.x = 50;
+    this.node.style.left = `${this.x}px`;
   }
+
+  /**
+   * Aumenta la velocidad del rover.
+   */
+  increaseSpeed() {
+    this.speed += 1;
+  }
+}

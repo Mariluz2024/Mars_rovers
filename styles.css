@@ -1,54 +1,122 @@
 #splash-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+#splash-title,
+game-over-title {
+  font-size: 52px;
+  font-weight: bold;
+  color: white;
+  align-items: center;
+}
+
+#start-btn {
+  padding: 10px 20px;
+  font-size: 36px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: aliceblue;
+  color: white;
+  transition: background-color 0.3s ease;
+  margin-top: 400px;
+}
+
+#start-btn:hover {
+  background-color: bisque;
+}
+
+.bungee-spice-regular {
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#game-time {
+  font-size: 39px;
+  margin-left: 500px;
+}
+
+#game-points {
+  font-size: 39px;
+  margin-top: 0px;
+  margin-left: 500px;
+}
+
+#rover {
+  position: absolute;
+  left: 150px;
+  top: 250px;
+}
+
+#planet-container {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 240px;
+  /* Ajusta el tamaño según sea necesario */
+  height: 240px;
+  /* Ajusta el tamaño según sea necesario */
+  z-index: 1000;
+  /* Asegúrate de que esté por encima de todo */
+}
+
+#planet {
+  width: 100%;
+  height: 100%;
+  animation: spin 60s linear infinite;
+  /* Ajusta la duración según sea necesario */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  #splash-title, game-over-title {
-    font-size: 52px;
-    font-weight: bold;
-    color: white;
-    align-items: center;
+
+  to {
+    transform: rotate(360deg);
   }
-  
-  #start-btn {
-    padding: 10px 20px;
-    font-size: 36px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: aliceblue;
-    color: white;
-    transition: background-color 0.3s ease;
-    margin-top: 400px;
-  }
-  
-  #start-btn:hover {
-    background-color: bisque;
-  }
-  
-  .bungee-spice-regular {
-    font-family: "Bungee Spice", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  #game-time {
-      font-size: 39px;
-      margin-left: 500px;
-  }
-  
-  #game-points {
-      font-size: 39px;
-      margin-top: 0px;
-      margin-left: 500px;
-  }
-  
-  #rover {
-      position: absolute;
-      left: 150px;
-      top: 250px;
-  }
+}
+
+#planet-container-tierra {
+  position: absolute;
+  top: 0;
+  left: 1100px;
+  width: 100px;
+  /* Ajusta el tamaño según sea necesario */
+  height: 100px;
+  /* Ajusta el tamaño según sea necesario */
+  z-index: 1000;
+  /* Asegúrate de que esté por encima de todo */
+}
+
+#planet-tierra {
+  width: 100%;
+  height: 100%;
+  animation: spin 50s linear infinite;
+  /* Ajusta la duración según sea necesario */
+}
+
+#planet-container-mercurio {
+  position: absolute;
+  top: 70px;
+  left: 1300px;
+  width: 100px;
+  /* Ajusta el tamaño según sea necesario */
+  height: 100px;
+  /* Ajusta el tamaño según sea necesario */
+  z-index: 1000;
+  /* Asegúrate de que esté por encima de todo */
+}
+
+#planet-mercurio {
+  width: 100%;
+  height: 100%;
+  animation: spin 50s linear infinite;
+  /* Ajusta la duración según sea necesario */
+}

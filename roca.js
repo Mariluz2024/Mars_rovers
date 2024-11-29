@@ -1,7 +1,8 @@
-
-//clase que representa una roca en el juego
+/**
+ * Clase que representa una roca en el juego.
+ */
 class Roca {
-  constructor(nombreArchivoRoca, x, y) {
+  constructor(nombreArchivoRoca, x, y, speed) {
     this.nombreArchivoRoca = nombreArchivoRoca;
     this.node = document.createElement("img");
     this.node.classList.add("roca");
@@ -22,7 +23,7 @@ class Roca {
     this.node.style.top = `${this.y}px`;
     this.node.style.left = `${this.x}px`;
 
-    this.speed = 2;
+    this.speed = speed;
 
     const random = Math.random();
 
@@ -41,7 +42,7 @@ class Roca {
   move() {
     this.y += this.speed;
 
-    if (this.y >= 320) {
+    if (this.y >= 500) {
       this.node.src = "images/explosion.png";
       this.impactSound.play();
       setTimeout(() => {
@@ -53,4 +54,4 @@ class Roca {
 
     this.node.style.top = `${this.y}px`;
   }
-  }
+}

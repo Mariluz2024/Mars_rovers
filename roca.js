@@ -28,11 +28,11 @@ class Roca {
     const random = Math.random();
 
     if (random < 0.33) {
-      this.impactSound = new Audio('sounds/impact.mp3');
+      this.impactSound = new Audio("sounds/impact.mp3");
     } else if (random < 0.66) {
-      this.impactSound = new Audio('sounds/impact-2.mp3');
+      this.impactSound = new Audio("sounds/impact-2.mp3");
     } else {
-      this.impactSound = new Audio('sounds/impact-3.mp3');
+      this.impactSound = new Audio("sounds/impact-3.mp3");
     }
   }
 

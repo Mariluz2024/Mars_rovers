@@ -40,15 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", startGame);
 
   restartButton = document.querySelector("#restart-btn");
-  restartButton.addEventListener('click', startGame);
+  restartButton.addEventListener("click", startGame);
 
   window.gameBoxNode = document.querySelector("#game-box");
   rover = new Rover();
-  
-  document.querySelector('body').addEventListener('keydown', (e) => {
-    if (e.key == 'ArrowRight') {
-      rover.moveRight()
-    } else if (e.key == 'ArrowLeft') {
+
+  document.querySelector("body").addEventListener("keydown", (e) => {
+    if (e.key == "ArrowRight") {
+      rover.moveRight();
+    } else if (e.key == "ArrowLeft") {
       rover.moveLeft();
     }
   });
@@ -82,10 +82,17 @@ function startGame() {
  * Carga las rocas en el juego.
  */
 function loadRocks(speed) {
-
   removeRocks();
 
-  const rocaImages = ["roca-1.png", "roca-2.png", "roca-3.png", "roca-4.png", "roca-5.png", "roca-6.png", "roca-7.png"];
+  const rocaImages = [
+    "roca-1.png",
+    "roca-2.png",
+    "roca-3.png",
+    "roca-4.png",
+    "roca-5.png",
+    "roca-6.png",
+    "roca-7.png",
+  ];
   rocks = [];
   for (let i = 0; i < rocaImages.length; i++) {
     let xPosition = 250 + Math.random() * (window.innerWidth - 400);
@@ -99,7 +106,7 @@ function loadRocks(speed) {
  * Elimina las rocas del juego.
  */
 function removeRocks() {
-  document.querySelectorAll('.roca').forEach((roca) => {
+  document.querySelectorAll(".roca").forEach((roca) => {
     roca.remove();
   });
 }
@@ -112,7 +119,7 @@ function updateTimer() {
   time.textContent = `Remaining Time: ${remainingTime}`;
 
   if (remainingTime <= 0) {
-    gameOver()
+    gameOver();
   }
 }
 
@@ -120,7 +127,7 @@ function updateTimer() {
  * Muestra la pantalla de game over.
  */
 function gameOver(colission) {
-  const gamerOverSound = new Audio('sounds/game-over.mp3');
+  const gamerOverSound = new Audio("sounds/game-over.mp3");
   gamerOverSound.play();
   clearInterval(gameIntervalId);
   clearInterval(timerIntervalId);
@@ -136,11 +143,11 @@ function gameOver(colission) {
   remainingTime = 60;
 
   if (colission) {
-    const explosion = document.createElement('img');
-    explosion.src = 'images/explosion.png';
-    explosion.style.position = 'absolute';
-    explosion.style.width = '128px';
-    explosion.style.height = '128px';
+    const explosion = document.createElement("img");
+    explosion.src = "images/explosion.png";
+    explosion.style.position = "absolute";
+    explosion.style.width = "128px";
+    explosion.style.height = "128px";
     explosion.style.top = `${rover.y}px`;
     explosion.style.left = `${rover.x}px`;
     gameOverScreen.append(explosion);
@@ -151,7 +158,7 @@ function gameOver(colission) {
     }, 3000);
   }
 
-  document.querySelectorAll('.roca').forEach((roca) => {
+  document.querySelectorAll(".roca").forEach((roca) => {
     roca.remove();
   });
 }

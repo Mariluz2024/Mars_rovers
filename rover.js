@@ -26,7 +26,7 @@ class Rover {
 
     this.speed = 6;
 
-    this.successSound = new Audio('sounds/success.mp3');
+    this.successSound = new Audio("sounds/success.mp3");
   }
 
   /**
